@@ -1,0 +1,75 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Luma theme overrides
+//  _____________________________________________
+
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files
+
+@import '../lib/owl.carousel/owl.carousel.less';
+
+.breadcrumbs .item:not(:last-child):after{
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #999;
+  position: absolute;
+  top: 50%;
+  margin-top: -.125rem;
+  right: 0;
+}
+
+body {
+  font-family:'Lato';
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .page-layout-1column {
+    .product-info-main{
+        width: 50%;
+        padding: 0 0 0 30px;
+        box-sizing: border-box;
+    }
+    .product.media{
+        width: 50%;
+        margin: 0;
+        position: relative;
+    }
+  }
+}
+
+.breadcrumbs .items .item+.item{
+  margin-left: 10px;
+}
+.breadcrumbs {
+    background: 0 0;
+    padding: 34px 0 55px;
+  .items{
+    font-size: 15px;
+    color: #222222;
+    padding: 0 15px;
+    display: flex;
+    .item.home{
+      position: relative;
+      padding-right: 14px;
+    }
+    
+    .item{
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a{
+        color: #999;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+        <move element="product.info.review" destination="product.info.main" before="page.main.title"/>
+        <move element="page.main.title" destination="product.info.main" before="-"/>
+        <move element="product.info.sku" destination="product.info.main" before="product.info.price" />
+        <move element="product.info.overview" destination="product.info.options.wrapper" before="product.info.options.bottom"/>
+        <move element="product.info.mailto" destination="product.social" before="product.info.mgt" />
+        <move element="view.addto.wishlist" destination="content.product" before="-"/>
+        <move element="product.info.social" destination="product.social" before="-" />
+        <referenceContainer name="product.info.options.wrapper.bottom" remove="true" />
+
+
+        <referenceContainer name="product.info.main">
+            <container name="content.product" label="Add Container" htmlTag="div" htmlClass="content-product-add" after="product-social">
+                <container name="product.info.form.content" as="product_info_form_content">
+                    <block class="Magento\Catalog\Block\Product\View" name="product.info.addtocart" as="addtocart" template="product/view/addtocart.phtml"/>
+                </container>
+            </container>
+            <container name="product.social" label="Product social links container" htmlTag="div" htmlClass="product-social" after="product.options.wrapper">
+                <block class="Magento\Catalog\Block\Product\View" name="product.info.mgt" template="mgt-social.phtml"/>
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="product.info.description">
+            <action method="setTitle">
+                <argument name="title" xsi:type="string"> Description</argument>
+            </action>
+        </referenceBlock>
+   </body>
+</page>
