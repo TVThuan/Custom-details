@@ -28,8 +28,11 @@
     </media>
     <vars module="Magento_Catalog">
         <!-- Gallery and magnifier theme settings. Start -->
+        <var name="nav">thumbs</var> <!-- Gallery navigation style (false/thumbs/dots) -->
+        <var name="arrows">false</var> <!-- Turn on/off arrows on the sides preview (true/false) -->
         <var name="gallery">
             <var name="thumbmargin">30</var> <!-- Sliding type of thumbnails (slides/thumbs) -->
         </var>
+        <var name="navarrows">false</var> <!-- Turn on/off on the thumbs navigation sides arrows(true/false) -->
     </vars>
 </view>
